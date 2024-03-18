@@ -60,7 +60,8 @@ public class Svatky {
      */
     public MonthDay vratKdyMaSvatek(String jmeno) {
         //TODO
-        return null;
+        MonthDay svatek = svatky.get(jmeno);
+        return svatek;
     }
 
     /**
@@ -71,7 +72,9 @@ public class Svatky {
      */
     public boolean jeVSeznamu(String jmeno) {
         //TODO
-        return false;
+        boolean jeVSeznamu = svatky.containsKey(jmeno);
+        return jeVSeznamu;
+
     }
 
     /**
@@ -81,7 +84,8 @@ public class Svatky {
      */
     public int getPocetJmen() {
         //TODO
-        return 0;
+
+        return svatky.size();
     }
 
     /**
@@ -91,7 +95,7 @@ public class Svatky {
      */
     public Set<String> getSeznamJmen() {
         //TODO
-        return null;
+        return svatky.keySet();
     }
 
     /**
@@ -102,6 +106,7 @@ public class Svatky {
      */
     public void pridejSvatek(String jmeno, MonthDay denMesic) {
         //TODO
+        svatky.put(jmeno, denMesic);
     }
 
     /**
@@ -113,6 +118,7 @@ public class Svatky {
      */
     public void pridejSvatek(String jmeno, int den, int mesic) {
         //TODO
+        svatky.put("Anna", MonthDay.of(6, 27));
     }
 
     /**
@@ -124,6 +130,8 @@ public class Svatky {
      */
     public void pridejSvatek(String jmeno, int den, Month mesic) {
         //TODO
+        //svatky.put("Klara", MonthDay.of(8, 12));
+        svatky.put("Klara", MonthDay.of(8, 12));
     }
 
     /**
@@ -133,5 +141,6 @@ public class Svatky {
      */
     public void smazSvatek(String jmeno) {
         //TODO
+        svatky.remove(jmeno);
     }
 }
